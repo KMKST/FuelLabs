@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Labs | Premium Supplements</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">FUEL <span>LABS</span></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="index.html#about">About</a>
+        </div>
+        <div class="nav-actions" style="display: flex; gap: 1.5rem; align-items: center;">
+            <div id="auth-section" style="cursor: pointer; font-weight: 600;">
+                <span id="login-btn" style="color: var(--text-secondary); transition: color 0.3s; display: block;"
+                    onmouseover="this.style.color='var(--accent-primary)'"
+                    onmouseout="this.style.color='var(--text-secondary)'">Login</span>
+                <span id="user-display" style="color: var(--accent-primary); display: none;">User <span
+                        style="font-size: 0.8rem; margin-left: 0.5rem; cursor: pointer; color: var(--text-secondary);"
+                        onclick="logoutUser()">[Logout]</span></span>
+            </div>
+            <div class="cart-icon" id="cart-btn">
+                Cart <span id="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-btn" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Items will be injected here by JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="total">Total: <span id="cart-total">$0.00</span></div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Login/Register Modal -->
+    <div class="modal-overlay" id="auth-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Login</h2>
+                <button class="close-btn" onclick="toggleAuthModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="username-input" placeholder="Username" class="auth-input">
+                <input type="password" id="password-input" placeholder="Password" class="auth-input">
+                <p id="auth-error" style="color: #ff3366; font-size: 0.9rem; margin-top: 0.5rem; display: none;"></p>
+                <button id="auth-submit-btn" class="auth-btn" onclick="handleAuth()">Login</button>
+                <p style="text-align: center; margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+                    <span id="auth-toggle-text">Don't have an account?</span>
+                    <span style="color: var(--accent-primary); cursor: pointer;" onclick="toggleAuthMode()"
+                        id="auth-toggle-link">Register</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>ELEVATE YOUR <br><span class="highlight">PERFORMANCE</span></h1>
+            <p>Premium, science-backed supplements designed to fuel your ambition.</p>
+            <a href="#products" class="cta-btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <h2 class="section-title">FEATURED <span class="highlight">PRODUCTS</span></h2>
+        <div class="product-grid" id="product-grid">
+            <!-- Products will be injected here by JS -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">FUEL <span>LABS</span></div>
+            <p>&copy; 2026 Fuel Labs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
